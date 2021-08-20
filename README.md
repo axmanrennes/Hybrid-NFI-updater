@@ -10,24 +10,24 @@ I only did the mashup, all credit goes to the people mentioned above.
 
 ## Installation
 
-1. Clone the repo:
+Clone the repo:
 ```
 git clone https://github.com/StudyRemy/Hybrid-NFI-updater.git
 ```
 
-2. Open `NFI_updates.sh` file and tweak some variables:
+Open `NFI_updates.sh` file and tweak some variables:
 
 - `ROOT_PATH` - path to the directory where `NostalgiaForInfinityNext` and `freqtrade` directories are places
 - Check if `NFI_PATH` and `FT_PATH` are correct
 - `TG_TOKEN` - Telegram token you've got for the bot
 - `TG_CHAT_ID` - Telegram chat ID with your bot
 
-3. Make the file executable:
+Make the file executable:
 ```
 chmod +x NFI_updates.sh
 ```
 
-4. Setup a cronjob to execute the script periodically.
+Setup a cronjob to execute the script periodically.
 
 Log into your server and type `crontab -e`.  
 Edit the cron file, add in the following line at the bottom of the file.
