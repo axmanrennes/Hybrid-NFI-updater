@@ -4,8 +4,10 @@ A bash script which checks [NostalgiaForInfinityNext](https://github.com/iterati
 After updating it rebuilds and reloads the docker container.
 
 ## Credits
-Copy-pasted parts from https://github.com/krsh-off/nfi-tags-auto-update and from https://github.com/lobap/NostalgiaForInfinity_Update
+Copy-pasted parts from https://github.com/krsh-off/nfi-tags-auto-update and from https://github.com/lobap/NostalgiaForInfinity_Update  
+
 which both were inspired by https://github.com/shanejones/nfi-auto-update 
+
 I only did the mashup, all credit goes to the people mentioned above.
 
 ## Installation
