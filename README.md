@@ -17,7 +17,7 @@ Open `NFI_updates.sh` file and tweak some variables:
 
 Make the file executable:
 ```
-chmod +x update.sh
+chmod +x NFI_updates.sh
 ```
 
 Setup a Cron job to execute the script periodically.
