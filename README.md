@@ -1,6 +1,6 @@
 # Hybrid-NFI-updater
 
-A bash script which checks [NostalgiaForInfinityNext](https://github.com/iterativv/NostalgiaForInfinity) for newly added tags and updates it for usage with the [Freqtrade](https://github.com/freqtrade/freqtrade) bot.
+A bash script which checks [NostalgiaForInfinityNext](https://github.com/iterativv/NostalgiaForInfinity) for newly added tags and updates it for usage with the [Freqtrade](https://github.com/freqtrade/freqtrade) bot.  
 After updating it rebuilds and reloads the docker container.
 
 ## Credits
