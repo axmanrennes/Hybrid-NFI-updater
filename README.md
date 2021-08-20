@@ -25,7 +25,8 @@ Setup a Cron job to execute the script periodically.
 Log into your server and type `crontab -e`. Next you should be editing the cron file, add in the following line at the bottom of the file.
 
 ```
-*/30 * * * * /bin/bash -c "nfi-tags-auto-update/update.sh"
+*/30 * * * * /bin/bash -c "LOCATION_OF_FILE/NFI_updates.sh"
 ```
+Where `LOCATION_OF_FILE` is the location of the updater
 
 Once that is saved, the updater will check for new git updates every 30 mins and notify you via Telegram if there was anything new so you can restart it.
