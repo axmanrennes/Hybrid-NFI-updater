@@ -4,7 +4,8 @@ ROOT_PATH=""
 NFI_PATH="${ROOT_PATH}/NostalgiaForInfinity/NostalgiaForInfinityNext.py"
 FT_PATH="${ROOT_PATH}/freqtrade/user_data/strategies/NostalgiaForInfinityNext.py"
 TG_TOKEN=""
-TG_CHAT_ID=""GIT_URL="https://github.com/iterativv/NostalgiaForInfinity"
+TG_CHAT_ID=""
+GIT_URL="https://github.com/iterativv/NostalgiaForInfinity"
 
 # Go to NFI directory
 cd $(dirname ${NFI_PATH})
