@@ -1,6 +1,6 @@
 # Hybrid-NFIX-updater
 
-A bash script which checks [NostalgiaForInfinityNext](https://github.com/iterativv/NostalgiaForInfinity) for newly added tags and updates it for usage with the [Freqtrade](https://github.com/freqtrade/freqtrade) bot.  
+A bash script which checks [NostalgiaForInfinityX](https://github.com/iterativv/NostalgiaForInfinity) for newly added tags and updates it for usage with the [Freqtrade](https://github.com/freqtrade/freqtrade) bot.  
 After updating it rebuilds and reloads the docker container.
 
 ## Credits
@@ -37,8 +37,9 @@ Setup a cronjob to execute the script periodically.
 Log into your server and type `crontab -e`.  
 Edit the cron file, add in the following line at the bottom of the file.
 
+Next you should be editing the cron file, add in the following line at the bottom of the file. This will run every 2/7/12/17...52/57 minutes past the hour and it does will not clash with the with the 5 min candles calculations. h/t @abanchev for this tip! We can also add an option to automatically start the bot should the server reboot for whatever reason.
 ```
 2-59/5 * * * * /bin/bash -c "/root/Hybrid-NFI-updater/NFI_updates.sh" > /root/updater.log 2>&1
 ```
 
-Once that is saved, the updater will check for new git updates every 30 mins and notify you via Telegram if there was anything new so you can restart it.
+Once that is saved, the updater will check for new git updates
