@@ -35,7 +35,7 @@ Log into your server and type `crontab -e`.
 Edit the cron file, add in the following line at the bottom of the file.
 
 ```
-*/30 * * * * /bin/bash -c "Hybrid-NFI-updater/NFI_updates.sh"
+2-59/5 * * * * /bin/bash -c "/root/Hybrid-NFI-updater/NFI_updates.sh" > /root/updater.log 2>&1
 ```
 
 Once that is saved, the updater will check for new git updates every 30 mins and notify you via Telegram if there was anything new so you can restart it.
