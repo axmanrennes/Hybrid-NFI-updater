@@ -1,10 +1,13 @@
 #!/bin/bash
 
-ROOT_PATH=""
-NFI_PATH="${ROOT_PATH}/NostalgiaForInfinity/NostalgiaForInfinityNext.py"
-FT_PATH="${ROOT_PATH}/freqtrade/user_data/strategies/NostalgiaForInfinityNext.py"
-TG_TOKEN=""
-TG_CHAT_ID=""
+ROOT_PATH="/root"
+NFI_PATH="${ROOT_PATH}/NostalgiaForInfinity/NostalgiaForInfinityX.py"
+NFI_BLACKLIST_PATH="${ROOT_PATH}/NostalgiaForInfinity/configs/blacklist-binance.json"
+NFI_PAIRLIST_PATH="${ROOT_PATH}/NostalgiaForInfinity/configs/pairlist-volume-binance-usdt.json"
+FT_PATH="${ROOT_PATH}/freqtrade/user_data/strategies/NostalgiaForInfinityX.py"
+FT_CONFIG_PATH="${ROOT_PATH}/freqtrade/user_data/custom_config"
+TG_TOKEN="XXX"
+TG_CHAT_ID="XXX"
 GIT_URL="https://github.com/iterativv/NostalgiaForInfinity"
 
 # Go to NFI directory
@@ -21,13 +24,15 @@ current_tag=$(git describe --tags)
 if [ "$latest_tag" != "$current_tag" ]; then
 
         # Checkout to latest tag and update the NFI in Freqtrade folder
-        git checkout tags/$latest_tag -b $latest_tag || git checkout $latest_tag 
+        git checkout tags/$latest_tag -b $latest_tag || git checkout $latest_tag
         cp $NFI_PATH $FT_PATH
+        cp $NFI_BLACKLIST_PATH $FT_CONFIG_PATH
+        cp $NFI_PAIRLIST_PATH $FT_CONFIG_PATH
 
         # Get tag to which the latest tag is pointing
         latest_tag_commit=$(git rev-list -n 1 tags/${latest_tag})
-		
-		# Compose the main message send by the bot
+
+                # Compose the main message send by the bot
         curl -s --data "text=NFI is updated to tag: *${latest_tag}* . Please wait for reload..." \
                 --data "parse_mode=markdown" \
                 --data "chat_id=$TG_CHAT_ID" \
